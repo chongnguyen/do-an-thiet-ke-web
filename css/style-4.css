@@ -1,0 +1,687 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ====================================================================== */
+/* ========================== HEADING =========================== */
+/* ======================================================================== */
+.header {
+  background-image: url('../image/slider-bg-02_1903x.webp');
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  height: 120vh;
+  margin-bottom: 100px;
+}
+
+/* -------------------- navigation ----------------------- */
+
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .nav-brand {
+  margin-left: 20px;
+}
+
+.nav .nav-brand img{
+  width: 200px;
+}
+
+.nav  .nav-menu ul {
+  list-style: none;
+  display: flex;
+  padding: 50px 20px;
+}
+
+.nav-menu ul li {
+  transition: all 3s;
+}
+
+.nav-menu ul li .menu-item{
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 25px;
+  position: relative;
+} 
+
+.nav-menu .menu-item::before{
+  content: "";
+  border: 2px solid #fff;
+  width: 5px;
+  position: absolute;
+  bottom: -5px;
+  width: 0px;
+  transition: width .5s;
+  opacity: 0;
+  border-radius: 2px;
+}
+
+.nav-menu li:hover .menu-item::before{
+  display: inline-block;
+  width: 100%;
+  opacity: 1;
+}
+
+.nav .nav-icon-right {
+  font-size: 2rem;
+  padding: 60px 20px;
+}
+
+.nav-icon-right i {
+  margin: 0px 15px;
+  transition: all .8s;
+}
+
+.nav-icon-right:hover i:hover {
+  transform: rotateY(180deg);
+}
+
+/* ------------------------ heading ---------------------------- */
+.header .heading-content {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  text-align: center;
+}
+
+.header .heading-content .heading-sub{
+  text-transform: uppercase;
+  word-spacing: 7px;
+  font-size: 2rem;
+}
+.heading-content .heading-sub::after{
+  content: "";
+  display: block;
+  border-bottom: 2px solid rgba(184, 177, 177, 0.863);
+  width: 100px;
+  margin: 40px auto;
+}
+
+.heading-content .heading-title {
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  font-size: 9rem;
+  font-weight: 900;
+}
+
+
+.heading-content .btn {
+  font-size: 1.6rem;
+  color: #000;
+  text-decoration: none;
+  background-color: white;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: background-color .3s;
+}
+
+.heading-content .btn:hover{
+  background-color: #76492A;
+  color: #fff;
+}
+
+.header .heading-picture {
+  position: absolute;
+  top: 20%;
+  left: 55%;
+}
+
+.heading-picture img {
+  width: 70%;
+  animation: rolate 40s linear 0s infinite;
+}
+
+@keyframes rolate {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================================================== */
+/* ===================================== NEW PRODUCTS ============================== */
+/* ======================================================================= */
+.container {
+  width: 1140px;
+  margin: auto;
+}
+.container .new-products {
+  margin-bottom: 50px;
+}
+.title-section{
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.new-products .wrap-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrap-card-heading .card-n-products {
+  width: 31%;
+  position: relative;
+
+}
+
+.card-n-products .bg-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-n-products .main-product {
+  position: absolute;
+  top: 15%;
+  left: 17%;
+}
+
+.card-n-products .main-product img{
+  width: 85%;
+  transition: all .5s;
+}
+
+.card-n-products .description-card {
+  width: 90%;
+  text-align: center;
+  font-size: 1.6rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  color: #fff;
+}
+
+.card-n-products .description-card .title-secondary {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card-n-products .description-card .number-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #76492A;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 60px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.card-n-products:hover .product-hover {
+  transform: scale(1.15);
+}
+
+
+/* =============================================================== */
+/* ======================= SERVICE ------------------------------------- */
+/* ================================================================== */
+.container .service-section {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 100px;
+}
+
+.service-section .service-item {
+  width: 25%;
+  padding: 10px;
+}
+
+.service-section .service-item .title-service {
+  text-transform: capitalize;
+  font-size: 1.8rem;
+  color: #000;
+  margin-bottom: 10px;
+  transition: all .3s;
+  font-weight: 700;
+}
+
+.service-section .service-item .icon-service {
+  transition: all .3s;
+}
+
+
+.service-section .service-item:hover .icon-service {
+  transform: translateY(-10px);
+}
+
+.service-section .service-item:hover .title-service {
+  color: #76492A;
+}
+
+
+/* ==================================================================== *
+=============================== TRENDING PRODUCT =========================
+============================================================================= */
+/* .container .trending-product {
+  position: relative;
+} */
+
+/* .trending-product .bg-pr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+} */
+
+.trending-product .wrap-product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.trending-product .wrap-product .card-product {
+  width: 23%;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.trending-product .photo-pr {
+  position: relative;
+}
+
+.trending-product .photo-pr .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.trending-product .card-product .photo-pr img {
+  transition:  all .7s;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-product .photo-pr img,
+.card-product .name-pr,
+.card-product .rating,
+.card-product .price-pr {
+  margin-bottom: 10px;
+  transition: all .5s;
+}
+
+.card-product .name-pr {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.card-product .rating {
+  color: rgb(255, 166, 0);
+}
+
+.card-product .price-pr {
+  font-weight: 900;
+  color: red;
+}
+
+.card-product .icon-hover  i{
+  background-color: #76492A;
+  background-color: #000;
+  color: #fff;
+  padding: 1px;
+  border-radius: 50%;
+  transition: all .5s;
+  opacity: 0;
+  height: 0;
+}
+
+.trending-product .card-product:hover .front{
+  opacity: 0;
+}
+
+.trending-product .card-product:hover .rating{
+  height: 0;
+  opacity: 0;
+}
+
+.trending-product .card-product:hover .price-pr{
+ transform: translateY(-10px);
+}
+
+.trending-product .card-product:hover .icon-hover i{
+  opacity: 1;
+  padding: 10px;
+  display: inline;
+}
+
+.card-product .icon-hover  i:hover{
+  background-color: #76492A;
+}
+
+
+/* ========================================================== */
+/* ======================== TESTIMONIAL =============================== */
+/* ========================================================== */
+.testimonial-section {
+  background-image: url("../image/testimonial-bg.webp");
+  background-position: 50% 30%;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 30%;
+  font-size: 1.6rem;
+  color: #666;
+  margin-bottom: 100px;
+}
+
+.testimonial-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  align-items: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.192);
+}
+
+.testimonial-box .test-avatar {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-right: 1px solid #999;
+}
+
+.testimonial-box .test-quote {
+  width: 60%;
+  line-height: 1.5;
+  text-transform: capitalize;
+  word-spacing: 3px;
+}
+
+.testimonial-section .testimonial-box img{
+  border-radius: 50%;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.testimonial-box .name span{
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.testimonial-box .test-avatar::after {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  content: "\201C";
+  position: absolute;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #bbbbbb;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  height: 50px;
+  width: 50px;
+  line-height: 70px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* ========================================================== */
+/* ======================== BANNER SECTION =============================== */
+/* ========================================================== */
+.banner-section {
+  display: flex;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  position: relative;
+  text-shadow: 1px 1px 15px #000;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.banner-section .banner{
+  position: relative;
+  width: 32%;
+}
+
+.banner-section .title-banner {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.banner-section .title-banner span {
+  font-weight: 700;
+  font-size: 3rem;
+  text-transform: capitalize;
+  margin-bottom: -15px;
+  display: block;
+}
+
+.banner-item img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-item::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 100px;
+  background-color: rgba(255, 250, 250, 0.116);
+  transition: all .5s;
+  border: 1px solid rgba(255, 255, 255, 0.226);
+  opacity: 0;
+}
+
+.banner-item::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 90%;
+  background-color: rgba(255, 250, 250, 0.116);
+  transition: all .5s;
+  border: 1px solid rgba(255, 255, 255, 0.226);
+  opacity: 0;
+}
+
+.banner:hover .banner-item::after {
+  width: 95%;
+  height: 90%;
+  opacity: 1;
+}
+
+.banner:hover .banner-item::before {
+  width: 95%;
+  height: 90%;
+  opacity: 1;
+}
+
+/* =========================  BRAND =========================================== */
+.brand-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+}
+
+.brand-section .photo-brand {
+  width: 25%;
+  opacity: .6;
+  transition: all .3s;
+}
+
+.brand-section .photo-brand:hover {
+  opacity: 1;
+}
+
+/* ========================================================================= */
+/* ============================================ FOOTER ================================ */
+/* ============================================================================ */
+
+.footer-top {
+  text-align: center;
+  color: #fff;
+  background-image: url('../image/footer-bg.webp');
+  padding: 60px;
+}
+
+.footer-top i {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.footer-top .title-f-top {
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.footer-top form input {
+  height: 50px;
+  width: 500px;
+  border-radius: 50px;
+  border: 0;
+  outline: none;
+  padding: 5px 10px 5px 20px;
+  font-size: 2rem;
+}
+
+.footer-top .bnt {
+  display: inline-block;
+}
+
+.footer-top form a {
+  font-size: 2rem;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  background-color: #000000;
+  text-decoration: none;
+  border-radius: 50px;
+  transform: translateX(-40%);
+  transition: all .3s;
+  position: relative;
+}
+
+.footer form a::after {
+  content: "Subscribe";
+  padding: 15px 5px;
+  width: 0px;
+  height: 100%;
+  display: inline-block;
+  background-color: rgb(20, 20, 20);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  transition: width .3s;
+  opacity: 0;
+}
+
+.footer-top form .bnt:hover a::after{
+  opacity: .8;
+  width: 100%;
+  padding: 15px 30px;
+}
+
+/* footer bottom */
+.footer-bottom {
+  background-color: #000;
+  color: #fff;
+  padding: 50px;
+  padding-bottom: 20px;
+}
+
+.footer-bottom .wrap-col {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 50px 0 50px;
+  margin-bottom: 40px;
+}
+
+.footer-bottom .col {
+  width: 25%;
+}
+
+.col ul {
+  list-style: none;
+  margin-left: 25px;
+}
+
+.col .title-f-bottom {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.col li,
+.col .content-f-bottom {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+.col i,
+.icon-f i {
+  margin-right: 10px;
+}
+
+.footer-bottom .icon-f {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.footer-bottom .author-f {
+  font-size: 1.4rem;
+  border-top: 1px solid #666;
+  padding: 20px 50px;
+}
+
+.footer-bottom .author-f .icon-f-right{
+  float: right;
+  font-size: 2rem;
+}

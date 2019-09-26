@@ -1,0 +1,763 @@
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 100;
+  background-color: #000;
+}
+
+body {
+  background-color: #000;
+}
+
+/* ============= RESUABLE CONPONENT ==================== */
+
+/* ====================================================== */
+/* ================ HEADER ============================== */
+/* =========================================================== */
+.header {
+  clip-path: ellipse(80% 62% at 51% 32%);
+  /* background-image: linear-gradient(23deg, rgba(255,200,197,1) 0%,
+     rgba(221, 214, 243, 0.829) 100%),
+      url("./image/footer-bg.jpg"); */
+  background: linear-gradient(
+      to bottom,
+      rgba(138, 92, 92, 0.8),
+      rgba(0, 0, 0, 1) 98%
+    ),
+    url("../image/footer-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  /* color: #fff; */
+  color: #ff214f;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.header .box-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header .title-header {
+  font-size: 7rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 4.5px double #ff214f;
+  animation: moveInLeft 1s;
+}
+
+.header .sub-title {
+  font-size: 4rem;
+  font-weight: 100;
+  margin-bottom: 20px;
+  animation: moveInRight 1s;
+}
+.header .icon-header {
+  /* color: #6f0017; */
+  color: #dedede;
+}
+
+.header i {
+  font-size: 5rem;
+  padding: 5px;
+  transition: 0.3s;
+  animation: moveInBottom 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.header .fa-envelope {
+  font-size: 5.5rem;
+}
+
+.header i:hover,
+.header i:active {
+  transform: scale(1.2);
+  color: #ff214f;
+}
+
+/* .header .fa-facebook-square:hover {
+    color: #4267B2;
+}
+
+.header .fa-github-square:hover {
+    color: rgb(26, 1, 1);
+}
+
+.header .fa-envelope:hover {
+    color: rgb(202, 5, 5);
+} */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    border-bottom: 0;
+  }
+
+  80% {
+    transform: translate(10px, 0);
+    border-bottom: 0;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* =============================================================== */
+/* ====================== ABOUT ================================== */
+/* =============================================================== */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.row {
+  width: 1140px;
+  margin: auto;
+}
+
+.about .avatar {
+  width: 200px;
+  height: 185px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  height: fit-content;
+  box-shadow: 2px 2px 10px #999;
+}
+
+.about .avatar,
+.about .sumary,
+.about .contact {
+  background-color: #222;
+  box-shadow: 2px 2px 10px rgba(29, 28, 28, 0.822);
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.about .avatar img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.about .sumary {
+  width: 50%;
+  /* background-color: #fff; */
+  padding: 20px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 10px #999; */
+}
+
+.btn {
+  display: inline-block;
+  /* background-image: linear-gradient(23deg, rgba(255,200,197,1) 0%, rgba(221, 214, 243, 0.829) 100%); */
+  background: linear-gradient(to right, #ff214f, rgba(173, 83, 137, 0.8));
+  padding: 5px 15px;
+  text-decoration: none;
+  color: rgb(255, 253, 253);
+  border-radius: 5px;
+  transition: 0.3s;
+  box-shadow: 0px 2px 5px #333;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-image: linear-gradient(23deg, rgba(255,200,197,1) 0%, rgba(221, 214, 243, 0.829) 100%); */
+  background: linear-gradient(to right, #ff214f, rgba(173, 83, 137, 0.8));
+  transition: 0.3s;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  transform: scale(2);
+  opacity: 0;
+  z-index: -1;
+}
+
+.main-text {
+  margin-bottom: 40px;
+}
+
+.btn:hover,
+.btn:active {
+  transform: translateY(5px);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff214f;
+}
+
+.about .contact {
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  /* background-color: #fff; */
+  font-size: 1.4rem;
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 10px #999; */
+}
+
+.contact ul {
+  list-style-type: none;
+}
+
+.contact ul li {
+  margin-bottom: 20px;
+}
+
+.contact ul a {
+  text-decoration: none;
+  color: #000;
+  color: #dedede;
+}
+
+.contact ul li i {
+  margin-right: 10px;
+  color: #ff214f;
+}
+
+/* ====================================================================================== */
+/* ============================= SKILL ==================================================== */
+/* ====================================================================================== */
+.skill {
+  /* margin-bottom: 50px; */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../image/advice-advise-advisor-7096.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.section-title {
+  /* background-color: #fff; */
+  background-color: #000;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 40px;
+  /* margin-bottom: 50px; */
+  /* box-shadow: 0px 2px 5px rgb(26, 25, 25); */
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  /* background: linear-gradient(23deg, rgba(221,145,255,1) 0%, rgba(106,6,92,1) 100%); */
+  /* background: linear-gradient(to right, #FF214F, rgba(173,83,137,0.8)); */
+  color: #ff214f;
+  /* color: transparent; */
+  /* -webkit-background-clip: text; */
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.section-title h2:hover {
+  transform: skewY(5deg) scale(1.1);
+  letter-spacing: -2px;
+  text-shadow: 2px 5px 5px rgba(194, 0, 42, 0.432);
+}
+
+.skill .box-skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 150px 0px;
+  background-color: #000;
+  width: 50%;
+  margin: 0;
+  order: 3;
+}
+
+.row-skill {
+  display: flex;
+}
+
+.box-skill-right {
+  width: 50%;
+  color: #fff;
+  font-size: 4rem;
+  position: relative;
+  order: 2;
+}
+
+.box-skill-right p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 1rem;
+}
+
+.box-skill-right span {
+  color: #ff214f;
+  font-weight: 900;
+}
+
+.box-skill .language,
+.box-skill .database {
+  /* background-color: #222; */
+  width: 45%;
+  margin: 0px 10px;
+  padding: 20px;
+  font-size: 1.8rem;
+  border-radius: 10px;
+  /* box-shadow: 2px 2px 15px rgb(29, 28, 28); */
+  color: #adadad;
+  /* width: 50%;
+    margin: 0;
+    background-color: #000;
+    height: 50vh; */
+}
+
+.language .title-box,
+.database .title-box {
+  margin: 10px 0px;
+  color: #ff214f;
+}
+
+.language ul,
+.database ul {
+  margin-left: 30px;
+}
+
+/* ========================================================================================== */
+/* ===================================== PROJECT ============================================== */
+/* ============================================================================================== */
+.product {
+  margin-bottom: 5rem;
+}
+
+.product p {
+  width: 600px;
+  /* margin: auto; */
+  text-align: center;
+  font-size: 2rem;
+  margin: 0px auto 80px auto;
+  line-height: 1.5;
+  /* color: rgb(1, 1, 107); */
+  color: #dedede;
+}
+
+.product .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin-bottom: 5rem;
+}
+
+.product .row .card {
+  margin-bottom: 50px;
+  width: 30%;
+  box-shadow: 2px 2px 15px rgb(58, 56, 56);
+  position: relative;
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+.product .row .card-2 {
+  width: 48%;
+}
+/* 
+.card:hover {
+    transform: translateY(-30px);
+} */
+
+.product .row .card:hover img {
+  filter: brightness(70%) blur(2px);
+}
+
+.product .row .card:hover .btn-img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 1;
+}
+
+.product .row .card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product .row .card .btn-img {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+/* ========================================================================================== */
+/* ===================================== FOOTER ============================================== */
+/* ============================================================================================== */
+/* footer {
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    margin-top: 50px;
+    padding: 40px;
+    font-size: 1.5rem;
+}
+
+footer i {
+    font-size: 3rem;
+    transition: .3s;
+}
+
+footer i:hover,
+footer i:active {
+    transform: scale(1.2);
+    color: rgb(206, 103, 7);
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+footer .fa-facebook-square:hover {
+    color: #4267B2;
+}
+
+footer .fa-github-square:hover {
+    color: #000;
+}
+
+footer .fa-envelope:hover {
+    color: #C94530;
+} */
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #fff;
+  padding: 70px;
+  font-size: 2rem;
+  background: url("../image/footer-bg.jpg");
+  background-attachment: fixed;
+  align-items: center;
+}
+
+footer form {
+  background-color: rgba(0, 0, 0, 0.856);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+.footer-left ul li {
+  margin-bottom: 20px;
+}
+
+.footer-left i {
+  margin-right: 10px;
+  color: #ff214f;
+}
+
+.footer-right ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+
+.footer-right ul input,
+.footer-right textarea {
+  background-color: rgba(17, 17, 17, 0.904);
+  border: none;
+  outline: none;
+  height: 30px;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.footer-right ul input:focus,
+.footer-right textarea:focus {
+  background-color: #000;
+}
+
+.footer-right label {
+  margin-right: 20px;
+}
+
+.footer-right textarea {
+  resize: none;
+  height: 100px;
+}
+
+.btn-outline {
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin: auto;
+  background-color: #ff214f;
+  border-radius: 20px;
+  transition: all 0.3s;
+  padding: 10px;
+  border: 1px solid #ff214f;
+}
+
+.btn-outline:hover,
+.btn-outline:active {
+  background-color: transparent;
+}
+
+.footer-icon {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.footer-icon i {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  transition: all 0.3s;
+}
+
+.footer-icon .fa-facebook-f:hover {
+  background-color: #4267b2;
+  color: #fff;
+}
+.footer-icon .fa-twitter:hover {
+  background-color: #1da1f2;
+  color: #fff;
+}
+.footer-icon .fa-blogger-b:hover {
+  background-color: rgb(255, 187, 1);
+  color: #000;
+}
+.footer-icon .fa-linkedin-in:hover {
+  background-color: #0073b0;
+  color: #fff;
+}
+
+/* .back-to-top {
+    padding: 20px;
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF214F;
+} */
+
+/* ------------------------------------------------------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  display: block;
+  background: #000;
+  color: #ff214f;
+  color: #fff;
+  padding-top: 10rem;
+}
+.footer .heading-footer-sub {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 2rem;
+}
+
+.heading-footer-sub span {
+  font-size: 1rem;
+}
+
+.heading-footer-sub::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border: 0.5px solid #fff;
+  width: 20%;
+  top: 20%;
+  left: 15%;
+}
+
+.heading-footer-sub::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border: 0.5px solid #fff;
+  width: 20%;
+  top: 20%;
+  right: 15%;
+}
+
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+}
+
+.footer .footer-left-sub ul,
+.footer .footer-right-sub ul {
+  list-style: none;
+  text-align: center;
+  text-align: center;
+}
+
+.footer .footer-left-sub,
+.footer .footer-right-sub {
+  width: 25%;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.footer .footer-icon {
+  position: relative;
+  margin: 0;
+  width: 50%;
+}
+
+.footer .footer-icon::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 50px;
+  width: 1px;
+  border: 0.1px solid #fff;
+  top: 90%;
+  left: 50%;
+}
+
+.footer p {
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-bottom: 2rem;
+}
+
+.footer .box {
+  display: inline-block;
+  margin: auto;
+}
+
+.footer .box-item {
+  width: 200px;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #aaa;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.footer .email::before {
+  content: "name@gmail.com";
+  display: block;
+  width: 0%;
+  height: 32px;
+  background-color: #ff214f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  padding: 1rem;
+  opacity: 0;
+}
+
+.footer .subscribe::before {
+  content: "subscribe";
+  display: block;
+  width: 0%;
+  height: 32px;
+  background-color: #ff214f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.5s, color 0.001s;
+  padding: 1rem;
+  opacity: 0;
+}
+
+.footer .author {
+  font-size: 8px;
+  margin: 20px;
+}
+
+.footer .box:hover .box-item::before {
+  width: 100%;
+  opacity: 1;
+  color: white;
+}
+
+.footer .footer-icon .fab:hover {
+  color: #ff214f;
+  background: transparent;
+}
