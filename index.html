@@ -22,7 +22,16 @@
             <a class="icon-header" href="#"><i class="fab fa-github-square"></i></a> -->
         </div>
     </header>
-
+    <div class="audio"> 
+        <button onclick="playPause()">
+            <i class="fas fa-volume-up"></i>
+            <div class="tooltip">Play/Pause</div>
+        </button> 
+        <audio autoplay id="video1">
+            <source src=audio/AnhNangCuaAnh.mp3 type="audio/mp3">
+            <source src=./audio/AnhNangCuaAnh.mp3 type="audio/mpeg">
+        </audio>
+    </div> 
     <div class="container">
         <div class="row">
             <div class="about">
@@ -288,6 +297,19 @@
         </div>
         <div class="author">&copy; 2017 | NguyenChong</div>
     </footer>
+
+    
+
+<script> 
+    var myVideo = document.getElementById("video1"); 
+
+    function playPause() { 
+      if (myVideo.paused) 
+        myVideo.play(); 
+      else 
+        myVideo.pause(); 
+    } 
+</script> 
 </body>
 
 </html>
